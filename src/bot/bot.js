@@ -4,6 +4,7 @@ import onStart from "./handlers/onStart.js";
 import onProfile from "./handlers/onProfile.js";
 import onError from "./handlers/onError.js";
 import { onCourses } from "./handlers/onCourses.js";
+import { onLocation } from "./handlers/onLocation.js";
 
 config();
 
@@ -72,6 +73,8 @@ bot.on("message", async (msg) => {
     return onStart(msg);
   } else if (text == "📚 Kurslar") {
     return onCourses(msg);
+  }else if (text == "ℹ️ Markaz haqida") {
+    return onLocation(msg);
   }
   else {
     return onError(msg);
